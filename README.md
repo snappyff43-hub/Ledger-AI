@@ -4,8 +4,11 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.40+-FF4B4B.svg?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Ollama](https://img.shields.io/badge/Ollama-Qwen2.5_3B-black.svg?logo=ollama&logoColor=white)](https://ollama.com/)
 [![SQLite](https://img.shields.io/badge/SQLite-Local_Storage-003B57.svg?logo=sqlite&logoColor=white)](https://sqlite.org/)
+[![Demo Video](https://img.shields.io/badge/▶_Demo_Video-Watch_Walkthrough-red.svg?logo=google-drive&logoColor=white)](https://drive.google.com/file/d/1uTFPEZ8HfIOu0nSthFHvDq4_QKxQ2hwa/view?usp=drivesdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Tests: 36 Passing](https://img.shields.io/badge/Tests-36%20Passed-brightgreen.svg)](TESTING.md)
+
+> 🎥 **Live Demo Video:** [Watch the LocalLedger AI Walkthrough on Google Drive](https://drive.google.com/file/d/1uTFPEZ8HfIOu0nSthFHvDq4_QKxQ2hwa/view?usp=drivesdk)
 
 **LocalLedger AI** is a privacy-first, on-device invoice and receipt organizer designed for freelancers, independent contractors, and small business owners. It extracts structured financial records from unstructured invoice text and text-based PDFs using an open-weight language model running locally on your computer.
 

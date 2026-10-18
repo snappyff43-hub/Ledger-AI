@@ -29,6 +29,7 @@ Independent operators handle dozens of sensitive invoices, client billing statem
 
 ## Demo
 
+- 🎥 **Video Demo:** [Watch the LocalLedger AI Walkthrough on Google Drive](https://drive.google.com/file/d/1uTFPEZ8HfIOu0nSthFHvDq4_QKxQ2hwa/view?usp=drivesdk)
 - **GitHub Repository:** [https://github.com/snappyff43-hub/Ledger-AI](https://github.com/snappyff43-hub/Ledger-AI)
 - **Live Local Demo Script:** Available in [`DEMO_GUIDE.md`](https://github.com/snappyff43-hub/Ledger-AI/blob/main/DEMO_GUIDE.md)
 
