@@ -1,0 +1,3 @@
+# Optional dependencies for running the separate benchmark script (compare_models.py)
+# Note: LocalLedger AI application itself does NOT require this package.
+google-genai>=0.1.1

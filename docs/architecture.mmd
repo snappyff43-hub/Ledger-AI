@@ -1,0 +1,37 @@
+graph TD
+    classDef client fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0f172a;
+    classDef localApp fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#0f172a;
+    classDef storage fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#0f172a;
+    classDef optionalCloud fill:#f1f5f9,stroke:#64748b,stroke-width:1px,stroke-dasharray: 5 5,color:#334155;
+
+    subgraph UserInterface["User Presentation Layer"]
+        UI["Streamlit Dashboard & Form<br/>(app.py)"]:::client
+    end
+
+    subgraph LocalProcessing["Local Core Processing (100% On-Device)"]
+        Parser["Document Parser & Safety Guard<br/>(invoice_parser.py)"]:::localApp
+        AIService["AI Service & Canonical Validator<br/>(ai_service.py)"]:::localApp
+        Ollama["Local Ollama Service<br/>(http://127.0.0.1:11434)<br/>Model: qwen2.5:3b"]:::localApp
+    end
+
+    subgraph DataPersistence["Local Persistence & Output"]
+        DB["SQLite Database<br/>(database.py -> data/ledger.db)"]:::storage
+        CSV["Formula-Sanitized CSV Export"]:::storage
+    end
+
+    subgraph OptionalBench["Optional Benchmark Tool (Isolated)"]
+        Bench["Model Benchmark Script<br/>(compare_models.py)"]:::optionalCloud
+        Gemini["Optional Cloud Google Gemini<br/>(Requires explicit user opt-in & API key)"]:::optionalCloud
+    end
+
+    UI -->|"Raw Pasted Text or PDF Bytes"| Parser
+    Parser -->|"Sanitized Document Text"| AIService
+    AIService -->|"REST API (JSON Format, Temp 0.0)"| Ollama
+    Ollama -->|"Structured Invoice JSON"| AIService
+    AIService -->|"Canonical Fields & Discrepancy Warnings"| UI
+    UI -->|"Explicit User Confirmation"| DB
+    DB -->|"Filtered Query Results"| UI
+    DB -->|"Export Filtered Invoices"| CSV
+
+    Bench -.->|"Synthetic Invoice Only"| AIService
+    Bench -.->|"Optional Cloud API Call"| Gemini

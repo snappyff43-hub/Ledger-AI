@@ -1,0 +1,33 @@
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+
+# Local databases and storage
+*.db
+*.sqlite
+*.sqlite3
+data/
+
+# Exported CSVs and private invoice data
+*.csv
+*.pdf
+*.txt
+!requirements.txt
+!requirements-gemini.txt
+uploads/
+temp/
+
+# Environment files and IDE configs
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
